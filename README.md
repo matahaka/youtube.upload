@@ -6,12 +6,14 @@ YouTube Data API (v3) upload
     var yt = new Youtube("http://your.url/yt.json");
         yt.onerror = function (_from:String,_msg:String):void{};
         yt.onprogress = function(_msg:String):void{};
-        yt.oncomplete = function():void {  };
+        yt.oncomplete = function():void { 
+            yt.log.videoData.id - store YouTube video id
+            //  https://www.youtube.com/watch?v={yt.log.videoData.id}
+        };
         yt.max15min = true;
         yt.browse();
         
-        yt.log.videoData.id - store YouTube video id
-        https://www.youtube.com/watch?v={yt.log.videoData.id}
+        
 # yt.json
 
     {
