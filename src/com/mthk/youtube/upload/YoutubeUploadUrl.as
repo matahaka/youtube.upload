@@ -42,13 +42,13 @@ package com.mthk.youtube.upload {
 				new URLRequestHeader("Authorization", _accesstoken),
 				new URLRequestHeader("content-type", "application/json;charset=UTF-8"),
 				new URLRequestHeader("content-length", this.video.json.length.toString()),
-				new URLRequestHeader("x-upload-content-type", super.yt.vars.video.mimeType),
+				new URLRequestHeader("x-upload-content-type", super.yt.vars.mimeType),
 				new URLRequestHeader("x-upload-content-length", this.video.bytesAvailable.toString()),
 				new URLRequestHeader("expect", "")
 			);
 			super.yt.request = new URLRequest(super.yt.vars.youtubeUploadUrl);
 			super.yt.request.authenticate = true;
-			super.yt.request.contentType = super.yt.vars.video.mimeType
+			super.yt.request.contentType = super.yt.vars.mimeType
 			super.yt.request.followRedirects = false;
 			super.yt.request.requestHeaders = headers
 			super.yt.request.data = this.video.json;
