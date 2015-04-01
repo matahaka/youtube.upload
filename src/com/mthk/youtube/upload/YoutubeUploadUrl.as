@@ -37,7 +37,6 @@ package com.mthk.youtube.upload {
 		}
 		private function buildRequest(_accesstoken:String):void 
 		{
-			trace(super.yt.vars.youtubeUploadUrl)
 			var headers:Array = new Array(
 				new URLRequestHeader("Authorization", _accesstoken),
 				new URLRequestHeader("content-type", "application/json;charset=UTF-8"),
@@ -63,8 +62,9 @@ package com.mthk.youtube.upload {
 				var h:URLRequestHeader;	
 				for (var $i:uint = 0; $i < super.yt.responseHeaders.length; $i++ ) { 
 					h = super.yt.responseHeaders[$i]; 
-					trace(h.name,h.value)
-					if ( h.name == 'Location') { this.uploadUrl = h.value; break; }}; $i = NaN; h = null;
+					//trace(h.name, h.value);
+					if ( h.name == 'Location') { this.uploadUrl = h.value; break; };
+				}; $i = NaN; h = null;
 				if (this.uploadUrl != null)	{
 					if (super.oncomplete != null) {  
 						super.yt.log.videoUrl = this.uploadUrl
