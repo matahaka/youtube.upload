@@ -1,5 +1,5 @@
 # youtube.upload
-YouTube Data API (v3) upload
+YouTube Data API (v3) video upload library
 
 # Usage  
     
